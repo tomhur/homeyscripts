@@ -16,6 +16,7 @@ _.forEach(devices, device => {
 });
 var before = Math.floor((temp-12)/-0.28);
 var toSleep = hot - now - before;
+var shuttoff = hot - now + 30;
 /*
 console.log("Current time: " + now);
 console.log("Then the car should be hot: " + hot);
@@ -25,6 +26,7 @@ console.log("Mins to sleep before starting heater: " + toSleep);
 _.forEach(devices, device => {
     if (device.name == "Garage outside") {
         _.delay(function() {device.setCapabilityValue('onoff', true);} , toSleep*1000);
+        _.delay(function() {device.setCapabilityValue('onoff', false);} , shuttoff*1000);
     }
 });
 
