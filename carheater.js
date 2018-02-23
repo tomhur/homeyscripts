@@ -15,7 +15,7 @@ _.forEach(devices, device => {
     }
 });
 var before = Math.floor((temp-12)/-0.28);
-var toSleep = now - hot - before;
+var toSleep = hot - now - before;
 /*
 console.log("Current time: " + now);
 console.log("Then the car should be hot: " + hot);
