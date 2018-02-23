@@ -10,7 +10,7 @@ if (now > hot) return false;
 var temp;
 let devices = await Homey.devices.getDevices();
 _.forEach(devices, device => {
-    if (device.name == "väder:Ute") {
+    if (device.name == "Utside temp") {
         temp = device.state.measure_temperature;
     }
 });
