@@ -22,8 +22,8 @@ if ( toSleep < 0 ) toSleep = 1;
 
 _.forEach(devices, device => {
     if (device.name == "Garage outside") {
-        _.delay(function() {device.setCapabilityValue('onoff', true);} , toSleep*1000);
-        _.delay(function() {device.setCapabilityValue('onoff', false);} , shuttoff*1000);
+        _.delay(function() {device.setCapabilityValue('onoff', true);} , toSleep*60*1000);
+        _.delay(function() {device.setCapabilityValue('onoff', false);} , shuttoff*60*1000);
     }
 });
 
